@@ -1,6 +1,6 @@
 # prototype_1
 
-A new Flutter project.
+A Super Health app project.
 
 ## Getting Started
 
