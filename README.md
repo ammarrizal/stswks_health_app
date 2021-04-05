@@ -1,6 +1,4 @@
-# prototype_1
-
-A new Flutter project.
+# Prototype Health App by Statworks
 
 ## Getting Started
 
