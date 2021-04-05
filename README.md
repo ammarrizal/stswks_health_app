@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-# prototype_1
-
-A Super Health app project.
-=======
 # Prototype Health App by Statworks
->>>>>>> 37347ba653b67e1428dfd5670a62c84e006d5e5e
 
 ## Getting Started
 
