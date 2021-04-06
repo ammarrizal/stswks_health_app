@@ -1,16 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'my_home_page.dart';
+import 'register_page.dart';
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
+class LoginPage extends StatefulWidget {
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _LoginPageState createState() => _LoginPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +20,7 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           backgroundColor: Color(0xff1e6f5c),
           title: Text(
-            widget.title,
+            'Login',
             style: TextStyle(
               color: Colors.white,
             ),
@@ -90,7 +89,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   Container(
                     width: 300,
                     child: ElevatedButton(
-                      onPressed: () {/*print('clicked');*/},
+                      onPressed: () {
+                        // LOGIN METHOD GOES HERE
+                        Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => MyHomePage()),);
+                      },
                       style: ButtonStyle(
                         shape: MaterialStateProperty.all(RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(40.0),
@@ -111,7 +114,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   Container(
                     width: 300,
                     child: TextButton(
-                      onPressed: () {/*print('clicked');*/},
+                      onPressed: () {
+                        Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => RegisterPage()),);
+                      },
                       style: ButtonStyle(
                         shape: MaterialStateProperty.all(RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(40.0),

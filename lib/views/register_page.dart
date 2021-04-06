@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
+class RegisterPage extends StatefulWidget {
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _RegisterPageState createState() => _RegisterPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -21,7 +18,7 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           backgroundColor: Color(0xff1e6f5c),
           title: Text(
-            widget.title,
+            'Register',
             style: TextStyle(
               color: Colors.white,
             ),
