@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:prototype_1/constants.dart';
+import 'user_profile_info.dart';
 
 class MyHomePage extends StatelessWidget {
   @override
@@ -158,6 +159,7 @@ class MyHomePage extends StatelessWidget {
                       title: "Profile",
                       color: "#D9F8FB",
                       icon: FontAwesomeIcons.userCircle,
+                      pageTo: UserProfilePage(),
                     ),
                     SizedBox(
                       width: 12,
@@ -266,7 +268,8 @@ class HealthModules extends StatelessWidget {
   final String title;
   final String color;
   final IconData icon;
-  HealthModules({this.title, this.color, this.icon});
+  final Widget pageTo;
+  HealthModules({this.title, this.color, this.icon, this.pageTo});
 
   @override
   Widget build(BuildContext context) {
@@ -276,7 +279,8 @@ class HealthModules extends StatelessWidget {
       width: 180.0,
       child: InkWell(
         onTap: () {
-          print("You've been struck by a smooth criminal");
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => pageTo));
         },
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 15.0),

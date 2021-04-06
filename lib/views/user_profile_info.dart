@@ -1,34 +1,35 @@
 import 'package:flutter/material.dart';
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
+class UserProfilePage extends StatefulWidget {
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _UserProfilePageState createState() => _UserProfilePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _UserProfilePageState extends State<UserProfilePage> {
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          widget.title,
+          'Profile',
           style: TextStyle(
             color: Colors.white,
           ),
         ),
         centerTitle: true,
         backgroundColor: Color(0xff1e6f5c),
-        leading: IconButton(
-          onPressed: () {},
+        // Commented as navigator push add return button automatically
+        /*leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: Icon(
             Icons.arrow_back,
             color: Colors.white,
           ),
-        ),
+        ),*/
       ),
       body: SingleChildScrollView(
         child: Center(
