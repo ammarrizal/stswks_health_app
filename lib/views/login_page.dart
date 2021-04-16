@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:prototype_1/models/user_model.dart';
 import 'my_home_page.dart';
 import 'register_page.dart';
+import 'package:prototype_1/services/api.dart';
 
 class LoginPage extends StatefulWidget {
 
@@ -11,6 +13,34 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
 
+  final usernameController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  API api;
+  var user = User.empty();
+
+  bool invalidCredentials = false;
+
+  /*void setupAPI() async {
+    API api = new API();
+    //var res = await api.getUserById(1);
+    //user = new User.fromObject(res);
+  }*/
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    usernameController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    api = new API();
+  }
   @override
   Widget build(BuildContext context) {
 
@@ -34,7 +64,7 @@ class _LoginPageState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    'Username',
+                    user.Id.toString(),
                     style: TextStyle(
                       fontSize: 20.0,
                     ),
@@ -43,6 +73,7 @@ class _LoginPageState extends State<LoginPage> {
                   Container(
                     width: 300,
                     child: TextFormField(
+                      controller: usernameController,
                       textAlign: TextAlign.center,
                       decoration: InputDecoration(
                           border: OutlineInputBorder(
@@ -63,6 +94,7 @@ class _LoginPageState extends State<LoginPage> {
                   Container(
                     width: 300,
                     child: TextFormField(
+                      controller: passwordController,
                       textAlign: TextAlign.center,
                       obscureText: true,
                       decoration: InputDecoration(
@@ -85,14 +117,34 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                   ),
+                  SizedBox(height: 5),
+                  if (invalidCredentials) Text(
+                    'Invalid Credentials',
+                    style: TextStyle(
+                      color: Colors.red,
+                      fontSize: 17,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                   SizedBox(height: 10),
                   Container(
                     width: 300,
                     child: ElevatedButton(
-                      onPressed: () {
+                      onPressed: () async {
                         // LOGIN METHOD GOES HERE
-                        Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => MyHomePage()),);
+                        var res = await login();
+                        if (!res) {
+                          setState(() {
+                            invalidCredentials = true;
+                          });
+                        }
+                        else {
+                          setState(() {
+                            invalidCredentials = false;
+                          });
+                          Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => MyHomePage()),);
+                        }
                       },
                       style: ButtonStyle(
                         shape: MaterialStateProperty.all(RoundedRectangleBorder(
@@ -145,5 +197,14 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+
+  Future<bool> login() async {
+
+    user.email = usernameController.text;
+    user.password = passwordController.text;
+    var res = await api.login(user);
+    print(res);
+    return res;
   }
 }

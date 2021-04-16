@@ -1,9 +1,20 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:prototype_1/views/login_page.dart';
 //import './views/my_home_page.dart';
 
 void main() {
   runApp(MyApp());
+  HttpOverrides.global = new MyHttpOverrides();
+}
+
+class MyHttpOverrides extends HttpOverrides{
+  @override
+  HttpClient createHttpClient(SecurityContext context){
+    return super.createHttpClient(context)
+      ..badCertificateCallback = (X509Certificate cert, String host, int port)=> true;
+  }
 }
 
 class MyApp extends StatelessWidget {
