@@ -64,7 +64,7 @@ class _LoginPageState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    user.Id.toString(),
+                    'Username',
                     style: TextStyle(
                       fontSize: 20.0,
                     ),
