@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'my_home_page.dart';
+import 'home_page.dart';
 import 'register_page.dart';
 
 class LoginPage extends StatefulWidget {
