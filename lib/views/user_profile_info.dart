@@ -14,7 +14,7 @@ class _UserProfileState extends State<UserProfile> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          widget.title,
+          'Profile',
           style: TextStyle(
             color: Colors.white,
           ),
@@ -22,7 +22,9 @@ class _UserProfileState extends State<UserProfile> {
         centerTitle: true,
         backgroundColor: Color(0xff1e6f5c),
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: Icon(
             Icons.arrow_back,
             color: Colors.white,

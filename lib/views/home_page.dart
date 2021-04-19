@@ -159,7 +159,7 @@ class MyHomePage extends StatelessWidget {
                       title: "Profile",
                       color: "#D9F8FB",
                       icon: FontAwesomeIcons.userCircle,
-                      pageTo: UserProfile(),
+                      pageTo: '/profile',
                     ),
                     SizedBox(
                       width: 12,

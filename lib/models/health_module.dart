@@ -8,7 +8,7 @@ class HealthModules extends StatelessWidget {
   final String title;
   final String color;
   final IconData icon;
-  final Widget pageTo;
+  final String pageTo;
   HealthModules({this.title, this.color, this.icon, this.pageTo});
 
   @override
@@ -19,8 +19,11 @@ class HealthModules extends StatelessWidget {
       width: 180.0,
       child: InkWell(
         onTap: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => pageTo));
+          // Navigator.push(
+          //   context,
+          //   MaterialPageRoute(builder: (context) => pageTo),
+          // );
+          Navigator.of(context).pushNamed(pageTo);
         },
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 15.0),
