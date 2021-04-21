@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prototype_1/views/edit_profile_page.dart';
 
 class UserProfilePage extends StatefulWidget {
 
@@ -20,6 +21,27 @@ class _UserProfilePageState extends State<UserProfilePage> {
         ),
         centerTitle: true,
         backgroundColor: Color(0xff1e6f5c),
+        actions: [
+          Padding(
+            padding: EdgeInsets.fromLTRB(0.0, 10, 10, 10),
+            child: TextButton(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Color(0xff207d68)),
+              ),
+              onPressed: () {
+                Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => EditProfilePage()),);
+              },
+              child: Text(
+                'Edit Profile',
+                style: TextStyle(
+                  fontSize: 19.0,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+        ],
         // Commented as navigator push add return button automatically
         /*leading: IconButton(
           onPressed: () {
