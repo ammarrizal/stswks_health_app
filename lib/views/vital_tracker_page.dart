@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prototype_1/views/input_sugar_level_page.dart';
 import 'package:prototype_1/views/sugar_level_page.dart';
 import 'package:prototype_1/views/vitals_page.dart';
 
@@ -79,7 +80,10 @@ class _VitalTrackerState extends State<VitalTracker> {
               style:  ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(Color(0xff207d68)),
               ),
-              onPressed: (){},
+              onPressed: (){
+                Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => InputSugarLevel()),);
+              },
             ),
             SizedBox(height: 10.0),
             TextButton(
