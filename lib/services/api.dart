@@ -6,7 +6,7 @@ class API {
 
   Future getUserById(int id) async {
     try {
-      var url = Uri.https('192.168.0.102:45455', '/api/user/$id');
+      var url = Uri.https('192.168.1.103:45456', '/api/user/$id');
       var response = await http.get(url);
       print(jsonDecode(response.body));
       return jsonDecode(response.body);
@@ -30,7 +30,7 @@ class API {
       var _user = user.toMap(); // to json object
       var userBody = json.encode(_user);
       //print(_user);
-      var url = Uri.https('192.168.0.102:45455', '/api/user/login');
+      var url = Uri.https('192.168.1.103:45456', '/api/user/login');
       var response = await http.post(url, headers: header, body: userBody);
       //print('res code = ${response.statusCode}');
       return Future.value(response.statusCode == 200 ? true : false);

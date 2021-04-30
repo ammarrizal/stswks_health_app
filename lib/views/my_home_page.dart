@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:prototype_1/constants.dart';
+import 'package:prototype_1/views/vital_tracker_page.dart';
 import 'user_profile_info.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -168,6 +169,7 @@ class MyHomePage extends StatelessWidget {
                       title: "Vital Tracker",
                       color: "#D9F8FB",
                       icon: Icons.watch,
+                      pageTo: VitalTracker(),
                     ),
                   ],
                 ),
