@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prototype_1/views/vitals_page.dart';
 
 class VitalTracker extends StatefulWidget {
   @override
@@ -37,7 +38,10 @@ class _VitalTrackerState extends State<VitalTracker> {
               style:  ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(Color(0xff207d68)),
               ),
-              onPressed: (){},
+              onPressed: (){
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Vitals()),);
+              },
             ),
             SizedBox(height: 10.0),
             TextButton(
