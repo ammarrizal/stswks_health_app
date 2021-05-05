@@ -30,7 +30,7 @@ class API {
       var _user = user.toMap(); // to json object
       var userBody = json.encode(_user);
       //print(_user);
-      var url = Uri.https('192.168.1.103:45456', '/api/user/login');
+      var url = Uri.https('192.168.1.106:45456', '/api/user/login');
       var response = await http.post(url, headers: header, body: userBody);
       //print('res code = ${response.statusCode}');
       return Future.value(response.statusCode == 200 ? true : false);
