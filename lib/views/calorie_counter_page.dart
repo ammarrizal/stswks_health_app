@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prototype_1/views/third_party_app_config.dart';
 import 'package:prototype_1/views/third_party_app_page.dart';
 import 'package:prototype_1/views/calorie_counter.dart';
 
@@ -160,7 +161,36 @@ class _CalorieCounterState extends State<CalorieCounter> {
 
                 SizedBox(height: 15.0),
 
-
+                ElevatedButton(
+                  onPressed: (){
+                    Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ThirdPartyAppConfigPage()),);
+                  },
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(40.0),
+                    )),
+                    padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 20.0)),
+                    backgroundColor: MaterialStateProperty.all(Color(0xff1e6f5c)),
+                  ),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          'Configure 3rd party application',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 15.0),
+                      Icon(
+                        Icons.arrow_forward_rounded,
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
