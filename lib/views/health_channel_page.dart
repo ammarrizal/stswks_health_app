@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:prototype_1/views/event_page.dart';
+import 'package:prototype_1/views/ministry_social_feed_page.dart';
 
 class HealthChannel extends StatefulWidget {
   @override
@@ -27,7 +29,7 @@ class _HealthChannelState extends State<HealthChannel> {
                   ElevatedButton(
                     onPressed: (){
                       Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => null),);
+                        MaterialPageRoute(builder: (context) => Event()),);
                     },
                     style: ButtonStyle(
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
@@ -60,7 +62,7 @@ class _HealthChannelState extends State<HealthChannel> {
                   ElevatedButton(
                     onPressed: (){
                       Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => null),);
+                        MaterialPageRoute(builder: (context) => MinistrySocialFeed()),);
                     },
                     style: ButtonStyle(
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
