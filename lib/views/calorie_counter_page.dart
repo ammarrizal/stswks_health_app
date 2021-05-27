@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prototype_1/views/consumed_food_page.dart';
 import 'package:prototype_1/views/cycling_page.dart';
 import 'package:prototype_1/views/running_page.dart';
 import 'package:prototype_1/views/third_party_app_config.dart';
@@ -102,7 +103,7 @@ class _CalorieCounterState extends State<CalorieCounter> {
                   ElevatedButton(
                     onPressed: (){
                       Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => OverallCounter()),);
+                        MaterialPageRoute(builder: (context) => ConsumedFood()),);
                     },
                     style: ButtonStyle(
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
