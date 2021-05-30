@@ -1,7 +1,8 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:prototype_1/views/login_page.dart';
+//import 'package:prototype_1/views/login_page.dart';
+import 'package:prototype_1/views/welcome_page.dart';
 //import './views/my_home_page.dart';
 
 void main() {
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: LoginPage(),
+      home: WelcomePage(),
     );
   }
 }

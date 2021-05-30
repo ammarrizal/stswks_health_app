@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:prototype_1/models/user_model.dart';
 import 'my_home_page.dart';
@@ -47,25 +46,47 @@ class _LoginPageState extends State<LoginPage> {
     return GestureDetector(
       onTap: () {FocusScope.of(context).unfocus();},
       child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Color(0xff1e6f5c),
-          title: Text(
-            'Login',
-            style: TextStyle(
-              color: Colors.white,
-            ),
-          ),
-          centerTitle: true,
-        ),
+        // appBar: AppBar(
+        //   backgroundColor: Color(0xff1e6f5c),
+        //   title: Text(
+        //     'Login',
+        //     style: TextStyle(
+        //       color: Colors.white,
+        //     ),
+        //   ),
+        //   centerTitle: true,
+        // ),
         body: Center(
           child: SingleChildScrollView(
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
+                  Image.asset(
+                    'assets/oversight-logo.png',
+                    // height: 300,
+                    width: 300,
+                  ),
+                  Text(
+                    'Hi, There!',
+                    style: TextStyle(
+                      fontFamily: 'Butler',
+                      fontSize: 20.0,
+                    ),
+                  ),
+
+                  Text(
+                    'Please Choose One:',
+                    style: TextStyle(
+                      fontFamily: 'Butler',
+                      fontSize: 20.0,
+                    ),
+                  ),
+
                   Text(
                     'Username',
                     style: TextStyle(
+                      fontFamily: 'Butler',
                       fontSize: 20.0,
                     ),
                   ),
