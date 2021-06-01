@@ -29,7 +29,7 @@ class _SugarLevelState extends State<SugarLevel> {
               'Sugar level : 10',
               style: TextStyle(
                 fontFamily: 'Poppins',
-                fontSize: 20.0,
+                fontSize: 21.0,
                 color: Colors.black,
                 //fontWeight: FontWeight.bold,
               ),
