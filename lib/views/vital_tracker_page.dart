@@ -70,6 +70,7 @@ class _VitalTrackerState extends State<VitalTracker> {
                     style: TextStyle(
                       color: Colors.white,
                       fontFamily: 'Poppins',
+                      fontWeight: FontWeight.bold,
                       fontSize: 20.0,
                     ),
                   ),
@@ -102,6 +103,7 @@ class _VitalTrackerState extends State<VitalTracker> {
                     style: TextStyle(
                       color: Colors.white,
                       fontFamily: 'Poppins',
+                      fontWeight: FontWeight.bold,
                       fontSize: 20.0,
                     ),
                   ),
@@ -134,6 +136,7 @@ class _VitalTrackerState extends State<VitalTracker> {
                     style: TextStyle(
                       color: Colors.white,
                       fontFamily: 'Poppins',
+                      fontWeight: FontWeight.bold,
                       fontSize: 20.0,
                     ),
                   ),
