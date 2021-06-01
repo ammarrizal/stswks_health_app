@@ -4,7 +4,7 @@ import 'package:prototype_1/views/cycling_page.dart';
 import 'package:prototype_1/views/running_page.dart';
 import 'package:prototype_1/views/third_party_app_config.dart';
 import 'package:prototype_1/views/third_party_app_page.dart';
-import 'package:prototype_1/views/calorie_counter.dart';
+//import 'package:prototype_1/views/calorie_counter.dart';
 import 'package:prototype_1/views/walking_page.dart';
 
 class CalorieCounter extends StatefulWidget {
@@ -96,41 +96,41 @@ class _CalorieCounterState extends State<CalorieCounter> {
 
                   SizedBox(height: 15.0),
 
-                  TextButton(
-                    onPressed: (){
-                      Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => OverallCounter()),);
-                    },
-                    style: ButtonStyle(
-                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(0.0) // 40,
-                      )),
-                      padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 20.0)),
-                      backgroundColor: MaterialStateProperty.all(Color(0xff079cd8)),
-                    ),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Text(
-                            'CALORIE COUNTER',
-                            style: TextStyle(
-                              fontFamily: 'Poppins',
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                        SizedBox(width: 15.0),
-                        Icon(
-                          Icons.arrow_forward_rounded,
-                          color: Colors.white,
-                        ),
-                      ],
-                    ),
-                  ), // calorie counter
+                  // TextButton(
+                  //   onPressed: (){
+                  //     Navigator.push(context,
+                  //       MaterialPageRoute(builder: (context) => OverallCounter()),);
+                  //   },
+                  //   style: ButtonStyle(
+                  //     shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                  //       borderRadius: BorderRadius.circular(0.0) // 40,
+                  //     )),
+                  //     padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 20.0)),
+                  //     backgroundColor: MaterialStateProperty.all(Color(0xff079cd8)),
+                  //   ),
+                  //   child: Row(
+                  //     children: [
+                  //       Expanded(
+                  //         child: Text(
+                  //           'CALORIE COUNTER',
+                  //           style: TextStyle(
+                  //             fontFamily: 'Poppins',
+                  //             fontWeight: FontWeight.bold,
+                  //             fontSize: 20,
+                  //             color: Colors.white,
+                  //           ),
+                  //         ),
+                  //       ),
+                  //       SizedBox(width: 15.0),
+                  //       Icon(
+                  //         Icons.arrow_forward_rounded,
+                  //         color: Colors.white,
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ), // calorie counter
 
-                  SizedBox(height: 15.0),
+                  SizedBox(height: 0.0),
 
                   TextButton(
                     onPressed: (){
