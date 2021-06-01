@@ -22,8 +22,15 @@ class _InputSugarLevelState extends State<InputSugarLevel> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(' Input sugar level'),
-        backgroundColor: Color(0xff1e6f5c),
+        title: Text(
+          'INPUT SUGAR LEVEL',
+          style: TextStyle(
+            fontFamily: 'Poppins',
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        backgroundColor: Color(0xff079cd8),
         centerTitle: true,
       ),
       body: Center(
@@ -37,11 +44,17 @@ class _InputSugarLevelState extends State<InputSugarLevel> {
                   'Input sugar level',
                   style: TextStyle(
                     fontSize: 18.0,
+                    fontFamily: 'Poppins',
+                    //color: Colors.white,
+                    //fontWeight: FontWeight.bold,
                   ),
                 ),
                 SizedBox(height: 10.0),
                 TextFormField(
                   controller: sugarLevelController,
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                  ),
                   textAlign: TextAlign.center,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(
@@ -51,20 +64,36 @@ class _InputSugarLevelState extends State<InputSugarLevel> {
                   ),
                 ),
                 SizedBox(height: 15.0),
-                ElevatedButton(
-                  onPressed: () async {},
-                  style: ButtonStyle(
-                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(40.0),
-                    )),
-                    padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 20.0)),
-                    backgroundColor: MaterialStateProperty.all(Color(0xff1e6f5c)),
-                  ),
-                  child: Text(
-                    'Save',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.white,
+                Container(
+                  width: 400,
+                  child: TextButton(
+                    onPressed: () async {},
+                    // style: ButtonStyle(
+                    //   shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                    //     borderRadius: BorderRadius.circular(40.0),
+                    //   )),
+                    //   padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 20.0)),
+                    //   backgroundColor: MaterialStateProperty.all(Color(0xff1e6f5c)),
+                    // ),
+                    style: ButtonStyle(
+                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(0.0),
+                        side: BorderSide(
+                          color: Color(0xff96d3ee),
+                          width: 0.0,
+                        ),
+                      )),
+                      padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(30.0, 15.0, 30.0, 15.0)),
+                      backgroundColor: MaterialStateProperty.all(Color(0xff079cd8)),
+                    ),
+                    child: Text(
+                      'SAVE',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontFamily: 'Poppins',
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),
@@ -75,11 +104,15 @@ class _InputSugarLevelState extends State<InputSugarLevel> {
                   'Test time',
                   style: TextStyle(
                     fontSize: 18.0,
+                    fontFamily: 'Poppins',
                   ),
                 ),
                 SizedBox(height: 10.0),
                 TextFormField(
                   controller: testTimeController,
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                  ),
                   textAlign: TextAlign.center,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
@@ -89,20 +122,36 @@ class _InputSugarLevelState extends State<InputSugarLevel> {
                   ),
                 ),
                 SizedBox(height: 15.0),
-                ElevatedButton(
-                  onPressed: () async {},
-                  style: ButtonStyle(
-                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(40.0),
-                    )),
-                    padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 20.0)),
-                    backgroundColor: MaterialStateProperty.all(Color(0xff1e6f5c)),
-                  ),
-                  child: Text(
-                    'Add',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.white,
+                Container(
+                  width: 400,
+                  child: TextButton(
+                    onPressed: () async {},
+                    // style: ButtonStyle(
+                    //   shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                    //     borderRadius: BorderRadius.circular(40.0),
+                    //   )),
+                    //   padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 20.0)),
+                    //   backgroundColor: MaterialStateProperty.all(Color(0xff1e6f5c)),
+                    // ),
+                    style: ButtonStyle(
+                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(0.0),
+                        side: BorderSide(
+                          color: Color(0xff96d3ee),
+                          width: 0.0,
+                        ),
+                      )),
+                      padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(30.0, 15.0, 30.0, 15.0)),
+                      backgroundColor: MaterialStateProperty.all(Color(0xff079cd8)),
+                    ),
+                    child: Text(
+                      'ADD',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontFamily: 'Poppins',
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),
