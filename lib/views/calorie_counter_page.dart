@@ -17,8 +17,15 @@ class _CalorieCounterState extends State<CalorieCounter> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Calorie Counter'),
-        backgroundColor: Color(0xff1e6f5c),
+        title: Text(
+          'CALORIE COUNTER',
+          style: TextStyle(
+            fontFamily: 'Poppins',
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        backgroundColor: Color(0xff079cd8),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -29,9 +36,22 @@ class _CalorieCounterState extends State<CalorieCounter> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+
+                  SizedBox(height: 20.0),
+                  Text(
+                    'Overall calorie : 2400',
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: 18.0,
+                    ),
+                  ),
+
+                  SizedBox(height: 20.0),
+
                   Text(
                     'Input optimal daily calorie intake',
                     style: TextStyle(
+                      fontFamily: 'Poppins',
                       fontSize: 18.0,
                     ),
                   ),
@@ -39,52 +59,63 @@ class _CalorieCounterState extends State<CalorieCounter> {
                   TextFormField(
                     //controller: sugarLevelController,
                     textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      //fontSize: 18.0,
+                    ),
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30.0),
+                        borderRadius: BorderRadius.circular(0.0), // 30
                       ),
                       hintText: 'Enter your calorie intake',
                     ),
                   ),
                   SizedBox(height: 15.0),
-                  ElevatedButton(
-                    onPressed: () async {},
-                    style: ButtonStyle(
-                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(40.0),
-                      )),
-                      padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 20.0)),
-                      backgroundColor: MaterialStateProperty.all(Color(0xff1e6f5c)),
-                    ),
-                    child: Text(
-                      'Save',
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.white,
+                  Container(
+                    width: 400,
+                    child: TextButton(
+                      onPressed: () async {},
+                      style: ButtonStyle(
+                        shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(0.0),
+                        )),
+                        padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 20.0)),
+                        backgroundColor: MaterialStateProperty.all(Color(0xff079cd8)),
+                      ),
+                      child: Text(
+                        'SAVE',
+                        style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontSize: 20,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ), // save
 
                   SizedBox(height: 15.0),
 
-                  ElevatedButton(
+                  TextButton(
                     onPressed: (){
                       Navigator.push(context,
                         MaterialPageRoute(builder: (context) => OverallCounter()),);
                     },
                     style: ButtonStyle(
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(40.0),
+                        borderRadius: BorderRadius.circular(0.0) // 40,
                       )),
                       padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 20.0)),
-                      backgroundColor: MaterialStateProperty.all(Color(0xff1e6f5c)),
+                      backgroundColor: MaterialStateProperty.all(Color(0xff079cd8)),
                     ),
                     child: Row(
                       children: [
                         Expanded(
                           child: Text(
-                            'Calorie Counter',
+                            'CALORIE COUNTER',
                             style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.bold,
                               fontSize: 20,
                               color: Colors.white,
                             ),
@@ -93,6 +124,7 @@ class _CalorieCounterState extends State<CalorieCounter> {
                         SizedBox(width: 15.0),
                         Icon(
                           Icons.arrow_forward_rounded,
+                          color: Colors.white,
                         ),
                       ],
                     ),
@@ -100,24 +132,26 @@ class _CalorieCounterState extends State<CalorieCounter> {
 
                   SizedBox(height: 15.0),
 
-                  ElevatedButton(
+                  TextButton(
                     onPressed: (){
                       Navigator.push(context,
                         MaterialPageRoute(builder: (context) => ConsumedFood()),);
                     },
                     style: ButtonStyle(
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(40.0),
+                        borderRadius: BorderRadius.circular(0.0),
                       )),
                       padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 20.0)),
-                      backgroundColor: MaterialStateProperty.all(Color(0xff1e6f5c)),
+                      backgroundColor: MaterialStateProperty.all(Color(0xff079cd8)),
                     ),
                     child: Row(
                       children: [
                         Expanded(
                           child: Text(
-                            'Consumed Food',
+                            'CONSUMED FOOD',
                             style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.bold,
                               fontSize: 20,
                               color: Colors.white,
                             ),
@@ -126,6 +160,7 @@ class _CalorieCounterState extends State<CalorieCounter> {
                         SizedBox(width: 15.0),
                         Icon(
                           Icons.arrow_forward_rounded,
+                          color: Colors.white,
                         ),
                       ],
                     ),
@@ -133,24 +168,26 @@ class _CalorieCounterState extends State<CalorieCounter> {
 
                   SizedBox(height: 15.0),
 
-                  ElevatedButton(
+                  TextButton(
                     onPressed: (){
                       Navigator.push(context,
                         MaterialPageRoute(builder: (context) => ThirdPartyAppPage()),);
                     },
                     style: ButtonStyle(
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(40.0),
+                        borderRadius: BorderRadius.circular(0.0),
                       )),
                       padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 20.0)),
-                      backgroundColor: MaterialStateProperty.all(Color(0xff1e6f5c)),
+                      backgroundColor: MaterialStateProperty.all(Color(0xff079cd8)),
                     ),
                     child: Row(
                       children: [
                         Expanded(
                           child: Text(
-                            'Add 3rd party application',
+                            'ADD 3RD PARTY APPLICATION',
                             style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.bold,
                               fontSize: 20,
                               color: Colors.white,
                             ),
@@ -159,6 +196,7 @@ class _CalorieCounterState extends State<CalorieCounter> {
                         SizedBox(width: 15.0),
                         Icon(
                           Icons.arrow_forward_rounded,
+                          color: Colors.white,
                         ),
                       ],
                     ),
@@ -173,17 +211,19 @@ class _CalorieCounterState extends State<CalorieCounter> {
                     },
                     style: ButtonStyle(
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(40.0),
+                        borderRadius: BorderRadius.circular(0.0),
                       )),
                       padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 20.0)),
-                      backgroundColor: MaterialStateProperty.all(Color(0xff1e6f5c)),
+                      backgroundColor: MaterialStateProperty.all(Color(0xff079cd8)),
                     ),
                     child: Row(
                       children: [
                         Expanded(
                           child: Text(
-                            'Configure 3rd party application',
+                            'CONFIGURE 3RD PARTY APPLICATION',
                             style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.bold,
                               fontSize: 20,
                               color: Colors.white,
                             ),
@@ -192,6 +232,7 @@ class _CalorieCounterState extends State<CalorieCounter> {
                         SizedBox(width: 15.0),
                         Icon(
                           Icons.arrow_forward_rounded,
+                          color: Colors.white,
                         ),
                       ],
                     ),
@@ -199,24 +240,26 @@ class _CalorieCounterState extends State<CalorieCounter> {
 
                   SizedBox(height: 15.0),
 
-                  ElevatedButton(
+                  TextButton(
                     onPressed: (){
                       Navigator.push(context,
                         MaterialPageRoute(builder: (context) => Running()),);
                     },
                     style: ButtonStyle(
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(40.0),
+                        borderRadius: BorderRadius.circular(0.0),
                       )),
                       padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 20.0)),
-                      backgroundColor: MaterialStateProperty.all(Color(0xff1e6f5c)),
+                      backgroundColor: MaterialStateProperty.all(Color(0xff079cd8)),
                     ),
                     child: Row(
                       children: [
                         Expanded(
                           child: Text(
-                            'Running',
+                            'RUNNING',
                             style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.bold,
                               fontSize: 20,
                               color: Colors.white,
                             ),
@@ -225,6 +268,7 @@ class _CalorieCounterState extends State<CalorieCounter> {
                         SizedBox(width: 15.0),
                         Icon(
                           Icons.arrow_forward_rounded,
+                          color: Colors.white,
                         ),
                       ],
                     ),
@@ -232,24 +276,26 @@ class _CalorieCounterState extends State<CalorieCounter> {
 
                   SizedBox(height: 15.0),
 
-                  ElevatedButton(
+                  TextButton(
                     onPressed: (){
                       Navigator.push(context,
                         MaterialPageRoute(builder: (context) => Walking()),);
                     },
                     style: ButtonStyle(
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(40.0),
+                        borderRadius: BorderRadius.circular(0.0),
                       )),
                       padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 20.0)),
-                      backgroundColor: MaterialStateProperty.all(Color(0xff1e6f5c)),
+                      backgroundColor: MaterialStateProperty.all(Color(0xff079cd8)),
                     ),
                     child: Row(
                       children: [
                         Expanded(
                           child: Text(
-                            'Walking',
+                            'WALKING',
                             style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.bold,
                               fontSize: 20,
                               color: Colors.white,
                             ),
@@ -258,6 +304,7 @@ class _CalorieCounterState extends State<CalorieCounter> {
                         SizedBox(width: 15.0),
                         Icon(
                           Icons.arrow_forward_rounded,
+                          color: Colors.white,
                         ),
                       ],
                     ),
@@ -265,24 +312,26 @@ class _CalorieCounterState extends State<CalorieCounter> {
 
                   SizedBox(height: 15.0),
 
-                  ElevatedButton(
+                  TextButton(
                     onPressed: (){
                       Navigator.push(context,
                         MaterialPageRoute(builder: (context) => Cycling()),);
                     },
                     style: ButtonStyle(
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(40.0),
+                        borderRadius: BorderRadius.circular(0.0),
                       )),
                       padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 20.0)),
-                      backgroundColor: MaterialStateProperty.all(Color(0xff1e6f5c)),
+                      backgroundColor: MaterialStateProperty.all(Color(0xff079cd8)),
                     ),
                     child: Row(
                       children: [
                         Expanded(
                           child: Text(
-                            'Cycling',
+                            'CYCLING',
                             style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.bold,
                               fontSize: 20,
                               color: Colors.white,
                             ),
@@ -291,6 +340,7 @@ class _CalorieCounterState extends State<CalorieCounter> {
                         SizedBox(width: 15.0),
                         Icon(
                           Icons.arrow_forward_rounded,
+                          color: Colors.white,
                         ),
                       ],
                     ),
