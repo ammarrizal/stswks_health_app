@@ -58,7 +58,7 @@ class _InputSugarLevelState extends State<InputSugarLevel> {
                   textAlign: TextAlign.center,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30.0),
+                        borderRadius: BorderRadius.circular(0.0),
                       ),
                       hintText: 'Enter your blood sugar level',
                   ),
@@ -116,7 +116,7 @@ class _InputSugarLevelState extends State<InputSugarLevel> {
                   textAlign: TextAlign.center,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30.0),
+                      borderRadius: BorderRadius.circular(0.0), // 30 previously
                     ),
                     hintText: 'Enter the test time',
                   ),
