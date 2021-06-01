@@ -14,19 +14,23 @@ class _UserProfilePageState extends State<UserProfilePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Profile',
+          'PROFILE',
           style: TextStyle(
+            letterSpacing: 2.0,
+            fontFamily: 'Poppins',
+            fontWeight: FontWeight.bold,
+            //fontSize: 26,
             color: Colors.white,
           ),
         ),
         centerTitle: true,
-        backgroundColor: Color(0xff1e6f5c),
+        backgroundColor: Color(0xff079cd8),
         actions: [
           Padding(
             padding: EdgeInsets.fromLTRB(0.0, 10, 10, 10),
             child: TextButton(
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Color(0xff207d68)),
+                backgroundColor: MaterialStateProperty.all(Color(0xff3dade0)),
               ),
               onPressed: () {
                 Navigator.push(context,
@@ -35,7 +39,8 @@ class _UserProfilePageState extends State<UserProfilePage> {
               child: Text(
                 'Edit Profile',
                 style: TextStyle(
-                  fontSize: 19.0,
+                  fontFamily: 'Poppins',
+                  fontSize: 15.0,
                   color: Colors.white,
                 ),
               ),
@@ -134,6 +139,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
           Text(
             labelText,
             style: TextStyle(
+              fontFamily: 'Poppins',
               fontWeight: FontWeight.bold,
               fontSize: 20.0,
               color: Color(0xff282846),
@@ -143,6 +149,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
           Text(
             placeholder,
             style: TextStyle(
+              fontFamily: 'Poppins',
               fontSize: 20.0,
             ),
           ),

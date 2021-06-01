@@ -11,10 +11,17 @@ class _EditProfilePageState extends State<EditProfilePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Edit Profile'
+          'EDIT PROFILE',
+          style: TextStyle(
+            letterSpacing: 2.0,
+            fontFamily: 'Poppins',
+            fontWeight: FontWeight.bold,
+            //fontSize: 26,
+            color: Colors.white,
+          ),
         ),
         centerTitle: true,
-        backgroundColor: Color(0xff1e6f5c),
+        backgroundColor: Color(0xff079cd8),
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -35,26 +42,56 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 buildTextField("Supplementary", "..."),
 
                 SizedBox(height: 5),
+                // Container(
+                //   width: 300,
+                //   child: ElevatedButton(
+                //     onPressed: () async {},
+                //     style: ButtonStyle(
+                //       shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                //         borderRadius: BorderRadius.circular(40.0),
+                //       )),
+                //       padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 20.0)),
+                //       backgroundColor: MaterialStateProperty.all(Color(0xff1e6f5c)),
+                //     ),
+                //     child: Text(
+                //       'Save',
+                //       style: TextStyle(
+                //         fontSize: 20,
+                //         color: Colors.white,
+                //       ),
+                //     ),
+                //   ),
+                // ),
+
                 Container(
                   width: 300,
-                  child: ElevatedButton(
-                    onPressed: () async {},
+                  child: TextButton(
+                    onPressed: () {
+
+                    },
                     style: ButtonStyle(
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(40.0),
+                        borderRadius: BorderRadius.circular(0.0),
+                        side: BorderSide(
+                          color: Color(0xff96d3ee),
+                          width: 0.0,
+                        ),
                       )),
-                      padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 20.0)),
-                      backgroundColor: MaterialStateProperty.all(Color(0xff1e6f5c)),
+                      padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(30.0, 15.0, 30.0, 15.0)),
+                      backgroundColor: MaterialStateProperty.all(Color(0xff079cd8)),
                     ),
                     child: Text(
-                      'Save',
+                      'SAVE',
                       style: TextStyle(
+                        letterSpacing: 2.0,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.bold,
                         fontSize: 20,
                         color: Colors.white,
                       ),
                     ),
                   ),
-                ),
+                ), // Save button
               ],
             ),
           ),
@@ -72,6 +109,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
           Text(
             labelText,
             style: TextStyle(
+              fontFamily: 'Poppins',
               fontWeight: FontWeight.bold,
               fontSize: 20.0,
               color: Color(0xff282846),
@@ -81,6 +119,9 @@ class _EditProfilePageState extends State<EditProfilePage> {
           Container(
             width: 300,
             child: TextFormField(
+              style: TextStyle(
+                fontFamily: 'Poppins',
+              ),
               textAlign: TextAlign.center,
               decoration: InputDecoration(
                   border: OutlineInputBorder(

@@ -153,7 +153,7 @@ class _RegisterPageState extends State<RegisterPage> {
         textAlign: TextAlign.center,
         decoration: InputDecoration(
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(0.0),
+              borderRadius: BorderRadius.circular(0.0) // 30.0 previously,
             ),
             hintText: text),
         obscureText: isPassword ?? isPassword,
