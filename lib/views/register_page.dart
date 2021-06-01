@@ -16,10 +16,14 @@ class _RegisterPageState extends State<RegisterPage> {
       },
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color(0xff1e6f5c),
+          backgroundColor: Color(0xff079cd8),
           title: Text(
-            'Register',
+            'SIGN UP',
             style: TextStyle(
+              letterSpacing: 2.0,
+              fontFamily: 'Poppins',
+              fontWeight: FontWeight.bold,
+              //fontSize: 26,
               color: Colors.white,
             ),
           ),
@@ -78,28 +82,59 @@ class _RegisterPageState extends State<RegisterPage> {
                   buildTextField("Height", isDigit: true),
                   SizedBox(height: 30),
 
+                  // Container(
+                  //   width: 300,
+                  //   child: ElevatedButton(
+                  //     onPressed: () {/*print('clicked');*/},
+                  //     style: ButtonStyle(
+                  //       shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                  //         borderRadius: BorderRadius.circular(40.0),
+                  //       )),
+                  //       padding: MaterialStateProperty.all(
+                  //           EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 20.0)),
+                  //       backgroundColor:
+                  //       MaterialStateProperty.all(Color(0xff079cd8)),
+                  //     ),
+                  //     child: Text(
+                  //       'Create account',
+                  //       style: TextStyle(
+                  //         fontSize: 20,
+                  //         color: Colors.white,
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
+
                   Container(
                     width: 300,
-                    child: ElevatedButton(
-                      onPressed: () {/*print('clicked');*/},
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => RegisterPage()),);
+                      },
                       style: ButtonStyle(
                         shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(40.0),
+                          borderRadius: BorderRadius.circular(0.0),
+                          side: BorderSide(
+                            color: Color(0xff96d3ee),
+                            width: 0.0,
+                          ),
                         )),
-                        padding: MaterialStateProperty.all(
-                            EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 20.0)),
-                        backgroundColor:
-                        MaterialStateProperty.all(Color(0xff1e6f5c)),
+                        padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(30.0, 15.0, 30.0, 15.0)),
+                        backgroundColor: MaterialStateProperty.all(Color(0xff079cd8)),
                       ),
                       child: Text(
-                        'Create account',
+                        'CREATE ACCOUNT',
                         style: TextStyle(
+                          letterSpacing: 2.0,
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.bold,
                           fontSize: 20,
                           color: Colors.white,
                         ),
                       ),
                     ),
-                  ),
+                  ), // Create account button
                   SizedBox(height: 30),
                 ],
               ),
