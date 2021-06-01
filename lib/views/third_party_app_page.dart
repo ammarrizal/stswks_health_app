@@ -10,8 +10,15 @@ class _ThirdPartyAppPageState extends State<ThirdPartyAppPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Add 3rd party app'),
-        backgroundColor: Color(0xff1e6f5c),
+        title: Text(
+          'ADD 3RD PARTY APP',
+          style: TextStyle(
+            fontFamily: 'Poppins',
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        backgroundColor: Color(0xff079cd8),
         centerTitle: true,
       ),
       body: Container(
@@ -20,7 +27,7 @@ class _ThirdPartyAppPageState extends State<ThirdPartyAppPage> {
             children: [
               SizedBox(height: 20.0),
               Text(
-                'Overall calorie : 2400',
+                '---',
                 style: TextStyle(
                   fontSize: 18.0,
                 ),
