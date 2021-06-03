@@ -12,8 +12,15 @@ class _HealthChannelState extends State<HealthChannel> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Health Channel'),
-        backgroundColor: Color(0xff1e6f5c),
+        title: Text(
+          'HEALTH CHANNEL',
+          style: TextStyle(
+            fontFamily: 'Poppins',
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        backgroundColor: Color(0xff079cd8),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -26,32 +33,35 @@ class _HealthChannelState extends State<HealthChannel> {
                 children: [
                   SizedBox(height: 15.0),
 
-                  ElevatedButton(
+                  TextButton(
                     onPressed: (){
                       Navigator.push(context,
                         MaterialPageRoute(builder: (context) => Event()),);
                     },
                     style: ButtonStyle(
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(40.0),
+                        borderRadius: BorderRadius.circular(0.0),
                       )),
                       padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 20.0)),
-                      backgroundColor: MaterialStateProperty.all(Color(0xff1e6f5c)),
+                      backgroundColor: MaterialStateProperty.all(Color(0xff079cd8)),
                     ),
                     child: Row(
                       children: [
                         Expanded(
                           child: Text(
-                            'Events',
+                            'EVENTS',
                             style: TextStyle(
+                              fontFamily: 'Poppins',
                               fontSize: 20,
                               color: Colors.white,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
                         SizedBox(width: 15.0),
                         Icon(
                           Icons.arrow_forward_rounded,
+                          color: Colors.white,
                         ),
                       ],
                     ),
@@ -59,32 +69,35 @@ class _HealthChannelState extends State<HealthChannel> {
 
                   SizedBox(height: 15.0),
 
-                  ElevatedButton(
+                  TextButton(
                     onPressed: (){
                       Navigator.push(context,
                         MaterialPageRoute(builder: (context) => MinistrySocialFeed()),);
                     },
                     style: ButtonStyle(
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(40.0),
+                        borderRadius: BorderRadius.circular(0.0),
                       )),
                       padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 20.0)),
-                      backgroundColor: MaterialStateProperty.all(Color(0xff1e6f5c)),
+                      backgroundColor: MaterialStateProperty.all(Color(0xff079cd8)),
                     ),
                     child: Row(
                       children: [
                         Expanded(
                           child: Text(
-                            'Ministry social feed',
+                            'MINISTRY SOCIAL FEED',
                             style: TextStyle(
+                              fontFamily: 'Poppins',
                               fontSize: 20,
                               color: Colors.white,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
                         SizedBox(width: 15.0),
                         Icon(
                           Icons.arrow_forward_rounded,
+                          color: Colors.white,
                         ),
                       ],
                     ),

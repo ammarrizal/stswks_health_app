@@ -10,8 +10,15 @@ class _EventState extends State<Event> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Event'),
-        backgroundColor: Color(0xff1e6f5c),
+        title: Text(
+          'EVENTS',
+          style: TextStyle(
+            fontFamily: 'Poppins',
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        backgroundColor: Color(0xff079cd8),
         centerTitle: true,
       ),
       body: Container(),

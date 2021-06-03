@@ -10,8 +10,15 @@ class _MinistrySocialFeedState extends State<MinistrySocialFeed> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Ministry Social Feed'),
-        backgroundColor: Color(0xff1e6f5c),
+        title: Text(
+          'MINISTRY SOCIAL FEED',
+          style: TextStyle(
+            fontFamily: 'Poppins',
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        backgroundColor: Color(0xff079cd8),
         centerTitle: true,
       ),
       body: Container(),
