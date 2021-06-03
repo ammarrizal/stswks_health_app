@@ -30,6 +30,9 @@ class _UserProfilePageState extends State<UserProfilePage> {
             padding: EdgeInsets.fromLTRB(0.0, 10, 10, 10),
             child: TextButton(
               style: ButtonStyle(
+                shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(0.0),
+                )),
                 backgroundColor: MaterialStateProperty.all(Color(0xff3dade0)),
               ),
               onPressed: () {

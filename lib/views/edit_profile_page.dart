@@ -125,7 +125,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
               textAlign: TextAlign.center,
               decoration: InputDecoration(
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(30.0),
+                    borderRadius: BorderRadius.circular(0.0), // 30 previously
                   ),
               ),
               initialValue: placeholder,
