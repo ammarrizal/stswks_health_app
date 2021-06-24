@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prototype_1/models/user_model.dart';
+import 'package:prototype_1/services/jsonProvider.dart';
 import 'my_home_page.dart';
 import 'register_page.dart';
 import 'package:prototype_1/services/api.dart';

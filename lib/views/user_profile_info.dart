@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:prototype_1/models/user_model.dart';
+import 'package:prototype_1/services/jsonProvider.dart';
 import 'package:prototype_1/views/edit_profile_page.dart';
 
 class UserProfilePage extends StatefulWidget {
-
   @override
   _UserProfilePageState createState() => _UserProfilePageState();
 }
 
 class _UserProfilePageState extends State<UserProfilePage> {
+  var userFuture = ApiProvider().getUserData();
 
   @override
   Widget build(BuildContext context) {
@@ -36,8 +38,10 @@ class _UserProfilePageState extends State<UserProfilePage> {
                 backgroundColor: MaterialStateProperty.all(Color(0xff3dade0)),
               ),
               onPressed: () {
-                Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => EditProfilePage()),);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => EditProfilePage()),
+                );
               },
               child: Text(
                 'Edit Profile',
@@ -74,20 +78,19 @@ class _UserProfilePageState extends State<UserProfilePage> {
                   decoration: BoxDecoration(
                     border: Border.all(
                         width: 4,
-                        color: Theme.of(context).scaffoldBackgroundColor
-                    ),
+                        color: Theme.of(context).scaffoldBackgroundColor),
                     boxShadow: [
                       BoxShadow(
-                          spreadRadius: 2, blurRadius: 10,
+                          spreadRadius: 2,
+                          blurRadius: 10,
                           color: Colors.black.withOpacity(0.1),
-                          offset: Offset(0, 10)
-                      ),
+                          offset: Offset(0, 10)),
                     ],
                     shape: BoxShape.circle,
                     image: DecorationImage(
                         fit: BoxFit.cover,
-                        image: NetworkImage("https://images.pexels.com/photos/158827/field-corn-air-frisch-158827.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260")
-                    ),
+                        image: NetworkImage(
+                            "https://images.pexels.com/photos/158827/field-corn-air-frisch-158827.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260")),
                   ),
                 ),
                 SizedBox(
@@ -104,10 +107,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         begin: Alignment.center,
-                        colors: [
-                          Color(0xff800080),
-                          Color(0xffef5349)
-                        ],
+                        colors: [Color(0xff800080), Color(0xffef5349)],
                       ),
                     ),
                   ),
@@ -115,14 +115,469 @@ class _UserProfilePageState extends State<UserProfilePage> {
                 SizedBox(
                   height: 16,
                 ),
-                buildTextField("Full Name", "Some Name"),
-                buildTextField("Phone Number", "012345678"),
-                buildTextField("Identification Number", "111 222 333"),
-                buildTextField("Age", "23"),
-                buildTextField("Height", "1.75 cm"),
-                buildTextField("Weight", "60 Kg"),
-                buildTextField("Medication", "..."),
-                buildTextField("Supplementary", "..."),
+                FutureBuilder(
+                  future: userFuture,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 35.0),
+                        child: Column(
+                          children: [
+                            Text(
+                              'Username',
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20.0,
+                                color: Color(0xff282846),
+                              ),
+                            ),
+                            SizedBox(height: 10.0),
+                            Text(
+                              snapshot.data.userName,
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 20.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    } else {
+                      return CircularProgressIndicator();
+                    }
+                  },
+                  // child: Padding(
+                  //   padding: const EdgeInsets.only(bottom: 35.0),
+                  //   child: Column(
+                  //     children: [
+                  //       Text(
+                  //         labelText,
+                  //         style: TextStyle(
+                  //           fontFamily: 'Poppins',
+                  //           fontWeight: FontWeight.bold,
+                  //           fontSize: 20.0,
+                  //           color: Color(0xff282846),
+                  //         ),
+                  //       ),
+                  //       SizedBox(height: 10.0),
+                  //       Text(
+                  //         placeholder.toString(),
+                  //         style: TextStyle(
+                  //           fontFamily: 'Poppins',
+                  //           fontSize: 20.0,
+                  //         ),
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
+                ),
+                FutureBuilder(
+                  future: userFuture,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 35.0),
+                        child: Column(
+                          children: [
+                            Text(
+                              'Phone Number',
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20.0,
+                                color: Color(0xff282846),
+                              ),
+                            ),
+                            SizedBox(height: 10.0),
+                            Text(
+                              snapshot.data.phone,
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 20.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    } else {
+                      return CircularProgressIndicator();
+                    }
+                  },
+                  // child: Padding(
+                  //   padding: const EdgeInsets.only(bottom: 35.0),
+                  //   child: Column(
+                  //     children: [
+                  //       Text(
+                  //         labelText,
+                  //         style: TextStyle(
+                  //           fontFamily: 'Poppins',
+                  //           fontWeight: FontWeight.bold,
+                  //           fontSize: 20.0,
+                  //           color: Color(0xff282846),
+                  //         ),
+                  //       ),
+                  //       SizedBox(height: 10.0),
+                  //       Text(
+                  //         placeholder.toString(),
+                  //         style: TextStyle(
+                  //           fontFamily: 'Poppins',
+                  //           fontSize: 20.0,
+                  //         ),
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
+                ),
+                FutureBuilder(
+                  future: userFuture,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 35.0),
+                        child: Column(
+                          children: [
+                            Text(
+                              'Identification Number',
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20.0,
+                                color: Color(0xff282846),
+                              ),
+                            ),
+                            SizedBox(height: 10.0),
+                            Text(
+                              snapshot.data.identificationNumber,
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 20.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    } else {
+                      return CircularProgressIndicator();
+                    }
+                  },
+                  // child: Padding(
+                  //   padding: const EdgeInsets.only(bottom: 35.0),
+                  //   child: Column(
+                  //     children: [
+                  //       Text(
+                  //         labelText,
+                  //         style: TextStyle(
+                  //           fontFamily: 'Poppins',
+                  //           fontWeight: FontWeight.bold,
+                  //           fontSize: 20.0,
+                  //           color: Color(0xff282846),
+                  //         ),
+                  //       ),
+                  //       SizedBox(height: 10.0),
+                  //       Text(
+                  //         placeholder.toString(),
+                  //         style: TextStyle(
+                  //           fontFamily: 'Poppins',
+                  //           fontSize: 20.0,
+                  //         ),
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
+                ),
+                FutureBuilder(
+                  future: userFuture,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 35.0),
+                        child: Column(
+                          children: [
+                            Text(
+                              'Age',
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20.0,
+                                color: Color(0xff282846),
+                              ),
+                            ),
+                            SizedBox(height: 10.0),
+                            Text(
+                              snapshot.data.age.toString(),
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 20.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    } else {
+                      return CircularProgressIndicator();
+                    }
+                  },
+                  // child: Padding(
+                  //   padding: const EdgeInsets.only(bottom: 35.0),
+                  //   child: Column(
+                  //     children: [
+                  //       Text(
+                  //         labelText,
+                  //         style: TextStyle(
+                  //           fontFamily: 'Poppins',
+                  //           fontWeight: FontWeight.bold,
+                  //           fontSize: 20.0,
+                  //           color: Color(0xff282846),
+                  //         ),
+                  //       ),
+                  //       SizedBox(height: 10.0),
+                  //       Text(
+                  //         placeholder.toString(),
+                  //         style: TextStyle(
+                  //           fontFamily: 'Poppins',
+                  //           fontSize: 20.0,
+                  //         ),
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
+                ),
+                FutureBuilder(
+                  future: userFuture,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 35.0),
+                        child: Column(
+                          children: [
+                            Text(
+                              'Height',
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20.0,
+                                color: Color(0xff282846),
+                              ),
+                            ),
+                            SizedBox(height: 10.0),
+                            Text(
+                              snapshot.data.height.toString(),
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 20.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    } else {
+                      return CircularProgressIndicator();
+                    }
+                  },
+                  // child: Padding(
+                  //   padding: const EdgeInsets.only(bottom: 35.0),
+                  //   child: Column(
+                  //     children: [
+                  //       Text(
+                  //         labelText,
+                  //         style: TextStyle(
+                  //           fontFamily: 'Poppins',
+                  //           fontWeight: FontWeight.bold,
+                  //           fontSize: 20.0,
+                  //           color: Color(0xff282846),
+                  //         ),
+                  //       ),
+                  //       SizedBox(height: 10.0),
+                  //       Text(
+                  //         placeholder.toString(),
+                  //         style: TextStyle(
+                  //           fontFamily: 'Poppins',
+                  //           fontSize: 20.0,
+                  //         ),
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
+                ),
+                FutureBuilder(
+                  future: userFuture,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 35.0),
+                        child: Column(
+                          children: [
+                            Text(
+                              'Weight',
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20.0,
+                                color: Color(0xff282846),
+                              ),
+                            ),
+                            SizedBox(height: 10.0),
+                            Text(
+                              snapshot.data.weight.toString(),
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 20.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    } else {
+                      return CircularProgressIndicator();
+                    }
+                  },
+                  // child: Padding(
+                  //   padding: const EdgeInsets.only(bottom: 35.0),
+                  //   child: Column(
+                  //     children: [
+                  //       Text(
+                  //         labelText,
+                  //         style: TextStyle(
+                  //           fontFamily: 'Poppins',
+                  //           fontWeight: FontWeight.bold,
+                  //           fontSize: 20.0,
+                  //           color: Color(0xff282846),
+                  //         ),
+                  //       ),
+                  //       SizedBox(height: 10.0),
+                  //       Text(
+                  //         placeholder.toString(),
+                  //         style: TextStyle(
+                  //           fontFamily: 'Poppins',
+                  //           fontSize: 20.0,
+                  //         ),
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
+                ),
+                FutureBuilder(
+                  future: userFuture,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 35.0),
+                        child: Column(
+                          children: [
+                            Text(
+                              'Medication',
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20.0,
+                                color: Color(0xff282846),
+                              ),
+                            ),
+                            SizedBox(height: 10.0),
+                            Text(
+                              snapshot.data.medicines.toString(),
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 20.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    } else {
+                      return CircularProgressIndicator();
+                    }
+                  },
+                  // child: Padding(
+                  //   padding: const EdgeInsets.only(bottom: 35.0),
+                  //   child: Column(
+                  //     children: [
+                  //       Text(
+                  //         labelText,
+                  //         style: TextStyle(
+                  //           fontFamily: 'Poppins',
+                  //           fontWeight: FontWeight.bold,
+                  //           fontSize: 20.0,
+                  //           color: Color(0xff282846),
+                  //         ),
+                  //       ),
+                  //       SizedBox(height: 10.0),
+                  //       Text(
+                  //         placeholder.toString(),
+                  //         style: TextStyle(
+                  //           fontFamily: 'Poppins',
+                  //           fontSize: 20.0,
+                  //         ),
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
+                ),
+                FutureBuilder(
+                  future: userFuture,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 35.0),
+                        child: Column(
+                          children: [
+                            Text(
+                              'Supplementary',
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20.0,
+                                color: Color(0xff282846),
+                              ),
+                            ),
+                            SizedBox(height: 10.0),
+                            Text(
+                              snapshot.data.userName,
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 20.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    } else {
+                      return CircularProgressIndicator();
+                    }
+                  },
+                  // child: Padding(
+                  //   padding: const EdgeInsets.only(bottom: 35.0),
+                  //   child: Column(
+                  //     children: [
+                  //       Text(
+                  //         labelText,
+                  //         style: TextStyle(
+                  //           fontFamily: 'Poppins',
+                  //           fontWeight: FontWeight.bold,
+                  //           fontSize: 20.0,
+                  //           color: Color(0xff282846),
+                  //         ),
+                  //       ),
+                  //       SizedBox(height: 10.0),
+                  //       Text(
+                  //         placeholder.toString(),
+                  //         style: TextStyle(
+                  //           fontFamily: 'Poppins',
+                  //           fontSize: 20.0,
+                  //         ),
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
+                ),
+                // buildTextField("Phone Number", "012345678"),
+                // buildTextField("Identification Number", "111 222 333"),
+                // buildTextField("Age", "23"),
+                // buildTextField("Height", "1.75 cm"),
+                // buildTextField("Weight", "60 Kg"),
+                // buildTextField("Medication", "..."),
+                // buildTextField("Supplementary", "..."),
                 SizedBox(
                   height: 35,
                 ),
@@ -134,30 +589,63 @@ class _UserProfilePageState extends State<UserProfilePage> {
     );
   }
 
-  Widget buildTextField(String labelText, String placeholder) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 35.0),
-      child: Column(
-        children: [
-          Text(
-            labelText,
-            style: TextStyle(
-              fontFamily: 'Poppins',
-              fontWeight: FontWeight.bold,
-              fontSize: 20.0,
-              color: Color(0xff282846),
+  Widget buildTextField(String labelText, dynamic placeholder) {
+    return FutureBuilder(
+      future: userFuture,
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          return Padding(
+            padding: const EdgeInsets.only(bottom: 35.0),
+            child: Column(
+              children: [
+                Text(
+                  labelText,
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20.0,
+                    color: Color(0xff282846),
+                  ),
+                ),
+                SizedBox(height: 10.0),
+                Text(
+                  snapshot.data.userName,
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontSize: 20.0,
+                  ),
+                ),
+              ],
             ),
-          ),
-          SizedBox(height: 10.0),
-          Text(
-            placeholder,
-            style: TextStyle(
-              fontFamily: 'Poppins',
-              fontSize: 20.0,
-            ),
-          ),
-        ],
-      ),
+          );
+        } else {
+          return Text('');
+        }
+      },
+      // child: Padding(
+      //   padding: const EdgeInsets.only(bottom: 35.0),
+      //   child: Column(
+      //     children: [
+      //       Text(
+      //         labelText,
+      //         style: TextStyle(
+      //           fontFamily: 'Poppins',
+      //           fontWeight: FontWeight.bold,
+      //           fontSize: 20.0,
+      //           color: Color(0xff282846),
+      //         ),
+      //       ),
+      //       SizedBox(height: 10.0),
+      //       Text(
+      //         placeholder.toString(),
+      //         style: TextStyle(
+      //           fontFamily: 'Poppins',
+      //           fontSize: 20.0,
+      //         ),
+      //       ),
+      //     ],
+      //   ),
+      // ),
     );
   }
 }
