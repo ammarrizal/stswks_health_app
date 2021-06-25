@@ -82,7 +82,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                         );
                       }
                       else {
-                        return null;
+                        return const Text('No data');
                       }
                     },
                   ),
@@ -125,7 +125,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                         );
                       }
                       else {
-                        return null;
+                        return const Text('No data');
                       }
                     },
                   ),
@@ -168,7 +168,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                         );
                       }
                       else {
-                        return null;
+                        return const Text('No data');
                       }
                     },
                   ),
@@ -211,7 +211,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                         );
                       }
                       else {
-                        return null;
+                        return const Text('No data');
                       }
                     },
                   ),
@@ -254,7 +254,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                         );
                       }
                       else {
-                        return null;
+                        return const Text('No data');
                       }
                     },
                   ),
@@ -297,7 +297,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                         );
                       }
                       else {
-                        return null;
+                        return const Text('No data');
                       }
                     },
                   ),
@@ -339,7 +339,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                         );
                       }
                       else {
-                        return null;
+                        return const Text('No data');
                       }
                     },
                   ),
@@ -382,7 +382,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                         );
                       }
                       else {
-                        return null;
+                        return const Text('No data');
                       }
                     },
                   ),
@@ -433,10 +433,16 @@ class _EditProfilePageState extends State<EditProfilePage> {
                           //ApiProvider().deleteAppDir();
                           ApiProvider().updateUser(json.encode(user));
 
-                          //Navigator.popUntil(context, (route) => route.isFirst);
+                          Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                              builder: (BuildContext context) => MyHomePage(),
+                            ),
+                                (route) => false,
+                          );
 
-                          Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => MyHomePage()),);
+                          // Navigator.push(context,
+                          //   MaterialPageRoute(builder: (context) => MyHomePage()),);
                         }
                       },
                       style: ButtonStyle(
