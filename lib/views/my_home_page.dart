@@ -151,7 +151,7 @@ class MyHomePage extends StatelessWidget {
               ),
               //first row of modules
               Container(
-                width: double.infinity,
+                //width: double.infinity,
                 height: 80.0,
                 margin: EdgeInsets.symmetric(horizontal: 18.0),
                 //color is used for debug

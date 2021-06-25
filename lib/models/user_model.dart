@@ -17,6 +17,7 @@ class User {
   double height;
   double weight;
   List<Medicine> medicines;
+  List<Supplementary> supplementaries;
 
   int get Id => id;
 
@@ -32,11 +33,10 @@ class User {
     age = 0;
     height = 0;
     weight = 0;
-
   }
 
   User({ this.id, this.userName, this.firstName, this.lastName, this.email, this.password, this.phone,
-    this.identificationNumber, this.age, this.height, this.weight, this.medicines});
+    this.identificationNumber, this.age, this.height, this.weight, this.medicines, this.supplementaries});
 
   factory User.fromJson(Map<String, dynamic> json) => User(
     id: json["id"],
@@ -51,6 +51,7 @@ class User {
     height: json["height"],
     weight: json["weight"],
     medicines: List<Medicine>.from(json["medicines"].map((x) => Medicine.fromJson(x))),
+    supplementaries: List<Supplementary>.from(json["supplementaries"].map((x) => Supplementary.fromJson(x))),
   );
 
   Map<String, dynamic> toJson() => {
@@ -66,6 +67,7 @@ class User {
     "height": height,
     "weight": weight,
     "medicines": List<dynamic>.from(medicines.map((x) => x.toJson())),
+    "supplementaries": List<dynamic>.from(supplementaries.map((x) => x.toJson())),
   };
 
   User.fromObject(dynamic obj) {
@@ -107,6 +109,21 @@ class Medicine {
   String name;
 
   factory Medicine.fromJson(Map<String, dynamic> json) => Medicine(
+    name: json["name"],
+  );
+
+  Map<String, dynamic> toJson() => {
+    "name": name,
+  };
+}
+class Supplementary {
+  Supplementary({
+    this.name,
+  });
+
+  String name;
+
+  factory Supplementary.fromJson(Map<String, dynamic> json) => Supplementary(
     name: json["name"],
   );
 
