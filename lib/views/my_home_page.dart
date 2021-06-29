@@ -9,6 +9,7 @@ import 'package:prototype_1/views/calorie_counter_page.dart';
 import 'package:prototype_1/views/health_channel_page.dart';
 import 'package:prototype_1/views/medical_records_page.dart';
 import 'package:prototype_1/views/my_medication_page.dart';
+import 'package:prototype_1/views/telemedicine_page.dart';
 import 'package:prototype_1/views/virtual_monitoring_page.dart';
 import 'package:prototype_1/views/vital_tracker_page.dart';
 import 'medical_assist_page.dart';
@@ -266,6 +267,28 @@ class MyHomePage extends StatelessWidget {
                       color: "#D9F8FB",
                       icon: FontAwesomeIcons.stethoscope,
                       pageTo: VirtualMonitoring(),
+                    ),
+                  ],
+                ),
+              ),
+
+              SizedBox(
+                height: 12.0,
+              ),
+              //fourth row of modules
+              Container(
+                width: double.infinity,
+                height: 80.0,
+                margin: EdgeInsets.symmetric(horizontal: 18.0),
+                //color is used for debug
+                //color: HexColor("#ff8a8a"),
+                child: Row(
+                  children: [
+                    HealthModules(
+                      title: "Telemedicine",
+                      color: "#D9F8FB",
+                      icon: FontAwesomeIcons.prescriptionBottle,
+                      pageTo: Telemedicine(),
                     ),
                   ],
                 ),
