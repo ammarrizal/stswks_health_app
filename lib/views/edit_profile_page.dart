@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:prototype_1/models/user_model.dart';
+import 'package:prototype_1/services/api.dart';
 import 'package:prototype_1/services/jsonProvider.dart';
 import 'package:prototype_1/views/my_home_page.dart';
 import 'package:prototype_1/views/user_profile_info.dart';
@@ -44,7 +45,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 children: <Widget>[
 
                   FutureBuilder(
-                    future: ApiProvider().getUserData(),
+                    future: API().getUserById(1),
                     builder: (context, snapshot) {
                       if (snapshot.hasData) {
                         return Padding(
@@ -87,7 +88,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                     },
                   ),
                   FutureBuilder(
-                    future: ApiProvider().getUserData(),
+                    future: API().getUserById(1),
                     builder: (context, snapshot) {
                       if (snapshot.hasData) {
                         return Padding(
@@ -130,7 +131,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                     },
                   ),
                   FutureBuilder(
-                    future: ApiProvider().getUserData(),
+                    future: API().getUserById(1),
                     builder: (context, snapshot) {
                       if (snapshot.hasData) {
                         return Padding(
@@ -173,7 +174,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                     },
                   ),
                   FutureBuilder(
-                    future: ApiProvider().getUserData(),
+                    future: API().getUserById(1),
                     builder: (context, snapshot) {
                       if (snapshot.hasData) {
                         return Padding(
@@ -216,7 +217,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                     },
                   ),
                   FutureBuilder(
-                    future: ApiProvider().getUserData(),
+                    future: API().getUserById(1),
                     builder: (context, snapshot) {
                       if (snapshot.hasData) {
                         return Padding(
@@ -259,7 +260,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                     },
                   ),
                   FutureBuilder(
-                    future: ApiProvider().getUserData(),
+                    future: API().getUserById(1),
                     builder: (context, snapshot) {
                       if (snapshot.hasData) {
                         return Padding(
@@ -302,7 +303,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                     },
                   ),
                   FutureBuilder(
-                    future: ApiProvider().getUserData(),
+                    future: API().getUserById(1),
                     builder: (context, snapshot) {
                       if (snapshot.hasData) {
                         return Padding(
@@ -344,7 +345,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                     },
                   ),
                   FutureBuilder(
-                    future: ApiProvider().getUserData(),
+                    future: API().getUserById(1),
                     builder: (context, snapshot) {
                       if (snapshot.hasData) {
                         return Padding(
@@ -374,7 +375,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                                     ),
                                   ),
                                   // TODO: change medication to supplementary
-                                  initialValue: snapshot.data.medicines.toString(),
+                                  initialValue: snapshot.data.supplementaries.toString(),
                                 ),
                               ),
                             ],
@@ -427,6 +428,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                           print(user.age);
                           user.id = 0;
                           user.medicines = [];
+                          user.supplementaries = [];
                           var x = user.toJson();
                           print(x["id"]);
                           //ApiProvider().emptyCache();

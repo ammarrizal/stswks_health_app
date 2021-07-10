@@ -6,10 +6,13 @@ class API {
 
   Future getUserById(int id) async {
     try {
-      var url = Uri.https('192.168.1.103:45456', '/api/user/$id');
+      // 192.168.1.103:45456
+      var url = Uri.http('192.168.1.106:55000', '/api/user/$id');
       var response = await http.get(url);
-      print(jsonDecode(response.body));
-      return jsonDecode(response.body);
+      var data = (json.decode(response.body));
+      var user = User.fromJson(data);
+      //print(.id);
+      return user;
       //Map data = jsonDecode(response.body);
 
       //print(data);

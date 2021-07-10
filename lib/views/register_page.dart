@@ -290,6 +290,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             print(user.age);
                             user.id = 0;
                             user.medicines = [];
+                            user.supplementaries = [];
                             var x = user.toJson();
                             print(x["id"]);
                             //ApiProvider().emptyCache();

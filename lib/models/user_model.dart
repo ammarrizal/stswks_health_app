@@ -39,19 +39,19 @@ class User {
     this.identificationNumber, this.age, this.height, this.weight, this.medicines, this.supplementaries});
 
   factory User.fromJson(Map<String, dynamic> json) => User(
-    id: json["id"],
-    firstName: json["firstName"],
-    lastName: json["lastName"],
-    userName: json["userName"],
-    email: json["email"],
-    password: json["password"],
-    phone: json["phone"],
-    identificationNumber: json["identificationNumber"],
-    age: json["age"],
-    height: json["height"],
-    weight: json["weight"],
-    medicines: List<Medicine>.from(json["medicines"].map((x) => Medicine.fromJson(x))),
-    supplementaries: List<Supplementary>.from(json["supplementaries"].map((x) => Supplementary.fromJson(x))),
+    id: json["Id"],
+    firstName: json["FirstName"],
+    lastName: json["LastName"],
+    userName: json["Username"],
+    email: json["Email"],
+    password: json["Password"],
+    phone: json["Phone"],
+    identificationNumber: json["IdentificationNumber"],
+    age: json["Age"],
+    height: json["Height"],
+    weight: json["Weight"],
+    //medicines: List<Medicine>.from(json["Medicines"].map((x) => Medicine.fromJson(x))),
+    //supplementaries: List<Supplementary>.from(json["Supplementaries"].map((x) => Supplementary.fromJson(x))),
   );
 
   Map<String, dynamic> toJson() => {
