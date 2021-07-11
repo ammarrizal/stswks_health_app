@@ -22,6 +22,47 @@ class API {
     }
   }
 
+  Future updateUserById(int id, User user) async {
+    try {
+      print("update is ${User.fromObject(user)}");
+      // 192.168.1.103:45456
+      var url = Uri.http('192.168.1.106:55000', '/api/user/$id');
+      var response = await http.patch(
+        url,
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: User.fromObject(user)
+      );
+      print(response.statusCode);
+      return user;
+    }
+    catch (e) {
+      print("error : $e");
+    }
+  }
+
+  Future addUser(User user) async {
+    try {
+      //print("update is ${User.fromObject(user)}");
+      // 192.168.1.103:45456
+      print(user.toJson());
+      var url = Uri.http('192.168.1.106:55000', '/api/users');
+      var response = await http.post(
+          url,
+          headers: <String, String>{
+            'Content-Type': 'application/json; charset=UTF-8',
+          },
+          body: json.encode(user.toJson())
+      );
+      print('insert res = ' + response.statusCode.toString());
+      return user;
+    }
+    catch (e) {
+      print("error : $e");
+    }
+  }
+
   Map<String, String> header = {
     'Content-type': 'application/json',
     'Accept': 'application/json',

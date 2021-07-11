@@ -55,23 +55,23 @@ class User {
   );
 
   Map<String, dynamic> toJson() => {
-    "id": id,
-    "firstName": firstName,
-    "lastName": lastName,
-    "userName": userName,
-    "email": email,
-    "password": password,
-    "phone": phone,
-    "identificationNumber": identificationNumber,
-    "age": age,
-    "height": height,
-    "weight": weight,
-    "medicines": List<dynamic>.from(medicines.map((x) => x.toJson())),
-    "supplementaries": List<dynamic>.from(supplementaries.map((x) => x.toJson())),
+    "Id": id,
+    "FirstName": firstName,
+    "LastName": lastName,
+    "Username": userName,
+    "Email": email,
+    "Password": password,
+    "Phone": phone,
+    "IdentificationNumber": identificationNumber,
+    "Age": age,
+    "Height": height,
+    "Weight": weight,
+    // "Medicines": List<dynamic>.from(medicines.map((x) => x.toJson())),
+    // "Supplementaries": List<dynamic>.from(supplementaries.map((x) => x.toJson())),
   };
 
   User.fromObject(dynamic obj) {
-    id = obj["id"];
+    id = obj["Id"];
     firstName = obj["firstName"];
     lastName = obj["lastName"];
     email = obj["email"];

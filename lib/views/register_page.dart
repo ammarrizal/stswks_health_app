@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:prototype_1/models/user_model.dart';
+import 'package:prototype_1/services/api.dart';
 import 'package:prototype_1/services/jsonProvider.dart';
 import 'package:prototype_1/views/my_home_page.dart';
 
@@ -295,10 +296,11 @@ class _RegisterPageState extends State<RegisterPage> {
                             print(x["id"]);
                             //ApiProvider().emptyCache();
                             //ApiProvider().deleteAppDir();
-                            ApiProvider().registerUser(json.encode(user));
+                            //ApiProvider().registerUser(json.encode(user));
+                            API().addUser(user);
 
-                            Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => MyHomePage()),);
+                            // Navigator.push(context,
+                            //   MaterialPageRoute(builder: (context) => MyHomePage()),);
                           }
                         },
                         style: ButtonStyle(

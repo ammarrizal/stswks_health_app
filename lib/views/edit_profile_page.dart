@@ -426,14 +426,16 @@ class _EditProfilePageState extends State<EditProfilePage> {
                           _formKey.currentState.save();
                           print(user.userName);
                           print(user.age);
-                          user.id = 0;
-                          user.medicines = [];
-                          user.supplementaries = [];
+                          //TODO: Change user id dynamically
+                          user.id = 1;
+                          //user.medicines = null;
+                          //user.supplementaries = null;
                           var x = user.toJson();
                           print(x["id"]);
                           //ApiProvider().emptyCache();
                           //ApiProvider().deleteAppDir();
-                          ApiProvider().updateUser(json.encode(user));
+                          //ApiProvider().updateUser(json.encode(user));
+                          API().updateUserById(1, user);
 
                           Navigator.pushAndRemoveUntil(
                             context,
