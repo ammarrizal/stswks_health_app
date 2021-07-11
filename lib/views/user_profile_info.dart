@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prototype_1/models/user_model.dart';
+import 'package:prototype_1/services/api.dart';
 import 'package:prototype_1/services/jsonProvider.dart';
 import 'package:prototype_1/views/edit_profile_page.dart';
 
@@ -9,7 +10,7 @@ class UserProfilePage extends StatefulWidget {
 }
 
 class _UserProfilePageState extends State<UserProfilePage> {
-  var userFuture = ApiProvider().getUserData();
+  var userFuture = API().getUserById(1);
 
   @override
   Widget build(BuildContext context) {
@@ -191,7 +192,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
                             ),
                             SizedBox(height: 10.0),
                             Text(
-                              snapshot.data.phone,
+                              snapshot.data.phone.toString(),
                               style: TextStyle(
                                 fontFamily: 'Poppins',
                                 fontSize: 20.0,
@@ -248,7 +249,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
                             ),
                             SizedBox(height: 10.0),
                             Text(
-                              snapshot.data.identificationNumber,
+                              snapshot.data.identificationNumber.toString(),
                               style: TextStyle(
                                 fontFamily: 'Poppins',
                                 fontSize: 20.0,
@@ -533,7 +534,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
                             ),
                             SizedBox(height: 10.0),
                             Text(
-                              snapshot.data.userName,
+                              snapshot.data.supplementaries.toString(),
                               style: TextStyle(
                                 fontFamily: 'Poppins',
                                 fontSize: 20.0,

@@ -8,10 +8,12 @@ class API {
     try {
       // 192.168.1.103:45456
       var url = Uri.http('192.168.1.106:55000', '/api/user/$id');
-      var response = await http.get(url);
-      var data = (json.decode(response.body));
+      var response = await http.get(url); // body json string
+
+      var data = Map<String, dynamic>.from(jsonDecode(response.body));
+      print(data);
       var user = User.fromJson(data);
-      //print(.id);
+      print("user id is : " + user.userName.toString());
       return user;
       //Map data = jsonDecode(response.body);
 
