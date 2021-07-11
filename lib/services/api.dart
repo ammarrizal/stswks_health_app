@@ -26,7 +26,7 @@ class API {
 
   Future updateUserById(int id, User user) async {
     try {
-      print("update is ${User.fromObject(user)}");
+      //print("update is ${json.encode(user)}");
       // 192.168.1.103:45456
       var url = Uri.http('192.168.1.106:55000', '/api/user/$id');
       var response = await http.patch(
@@ -34,7 +34,7 @@ class API {
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },
-        body: User.fromObject(user)
+        body: json.encode(user)
       );
       print(response.statusCode);
       return user;
