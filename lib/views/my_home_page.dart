@@ -162,6 +162,7 @@ class MyHomePage extends StatelessWidget {
                 //color is used for debug
                 //color: HexColor("#ff8a8a"),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     HealthModules(
                       title: "Profile",
@@ -173,7 +174,7 @@ class MyHomePage extends StatelessWidget {
                       width: 12,
                     ),
                     HealthModules(
-                      title: "Vital Tracker",
+                      title: "Vital\nTracker",
                       color: "#D9F8FB",
                       icon: Icons.watch,
                       pageTo: VitalTracker(),
@@ -192,6 +193,7 @@ class MyHomePage extends StatelessWidget {
                 //color is used for debug
                 //color: HexColor("#ff8a8a"),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     HealthModules(
                       title: "Calorie\nCounter",
@@ -222,6 +224,7 @@ class MyHomePage extends StatelessWidget {
                 //color is used for debug
                 //color: HexColor("#ff8a8a"),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     HealthModules(
                       title: "Medical\nAssist",
@@ -252,6 +255,7 @@ class MyHomePage extends StatelessWidget {
                 //color is used for debug
                 //color: HexColor("#ff8a8a"),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     HealthModules(
                       title: "My\nMedicine",
@@ -283,6 +287,7 @@ class MyHomePage extends StatelessWidget {
                 //color is used for debug
                 //color: HexColor("#ff8a8a"),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     HealthModules(
                       title: "Telemedicine",
@@ -313,7 +318,7 @@ class HealthModules extends StatelessWidget {
     //return Expanded(
     return Container(
       height: double.infinity,
-      //width: 180.0, // updated width because of the size problem
+      //width: 172, // updated width because of the size problem
       child: InkWell(
         onTap: () {
           Navigator.push(
