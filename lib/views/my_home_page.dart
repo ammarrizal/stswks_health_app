@@ -313,7 +313,7 @@ class HealthModules extends StatelessWidget {
     //return Expanded(
     return Container(
       height: double.infinity,
-      width: 180.0,
+      //width: 180.0, // updated width because of the size problem
       child: InkWell(
         onTap: () {
           Navigator.push(
