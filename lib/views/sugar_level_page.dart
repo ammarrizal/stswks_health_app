@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prototype_1/services/api.dart';
 
 class SugarLevel extends StatefulWidget {
   @override
@@ -6,6 +7,9 @@ class SugarLevel extends StatefulWidget {
 }
 
 class _SugarLevelState extends State<SugarLevel> {
+
+  var vitalFuture = API().getVitalById(2);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,15 +29,27 @@ class _SugarLevelState extends State<SugarLevel> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              'Sugar level : 10',
-              style: TextStyle(
-                fontFamily: 'Poppins',
-                fontSize: 21.0,
-                color: Colors.black,
-                //fontWeight: FontWeight.bold,
-              ),
+            FutureBuilder(
+              future: vitalFuture,
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return Container(
+                    child: Text(
+                      'Sugar level : ${snapshot.data.sugarLevel}',
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 21.0,
+                        color: Colors.black,
+                        //fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  );
+                } else {
+                  return CircularProgressIndicator();
+                }
+              },
             ),
+
           ],
         ),
       ),

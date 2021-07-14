@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prototype_1/services/api.dart';
 import 'package:prototype_1/views/input_sugar_level_page.dart';
 import 'package:prototype_1/views/sugar_level_page.dart';
 //import 'package:prototype_1/views/vitals_page.dart';
@@ -9,6 +10,9 @@ class VitalTracker extends StatefulWidget {
 }
 
 class _VitalTrackerState extends State<VitalTracker> {
+
+  var vitalFuture = API().getVitalById(2);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,15 +33,79 @@ class _VitalTrackerState extends State<VitalTracker> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
 
-            buildVitalItem(label: 'Pulse', value: 5),
+            FutureBuilder(
+              future: vitalFuture,
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return Container(
+                    child: buildVitalItem(label: 'Pulse', value: snapshot.data.pulse),
+                  );
+                } else {
+                  return CircularProgressIndicator();
+                }
+              },
+            ),
+            //buildVitalItem(label: 'Pulse', value: 5),
             SizedBox(height: 10.0),
-            buildVitalItem(label: 'Blood Pressure', value: 5),
+
+            FutureBuilder(
+              future: vitalFuture,
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return Container(
+                    child: buildVitalItem(label: 'Blood Pressure', value: snapshot.data.bloodPressure),
+                  );
+                } else {
+                  return CircularProgressIndicator();
+                }
+              },
+            ),
+            //buildVitalItem(label: 'Blood Pressure', value: 5),
             SizedBox(height: 10.0),
-            buildVitalItem(label: 'Temp', value: 5),
+
+            FutureBuilder(
+              future: vitalFuture,
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return Container(
+                    child: buildVitalItem(label: 'Temp', value: snapshot.data.temp),
+                  );
+                } else {
+                  return CircularProgressIndicator();
+                }
+              },
+            ),
+            //buildVitalItem(label: 'Temp', value: 5),
             SizedBox(height: 10.0),
-            buildVitalItem(label: 'VO2 Max', value: 5),
+
+            FutureBuilder(
+              future: vitalFuture,
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return Container(
+                    child: buildVitalItem(label: 'VO2 Max', value: snapshot.data.vo2Max),
+                  );
+                } else {
+                  return CircularProgressIndicator();
+                }
+              },
+            ),
+            //buildVitalItem(label: 'VO2 Max', value: 5),
             SizedBox(height: 10.0),
-            buildVitalItem(label: 'R-R Intervals', value: 5),
+
+            FutureBuilder(
+              future: vitalFuture,
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return Container(
+                    child: buildVitalItem(label: 'R-R Intervals', value: snapshot.data.rrIntervals),
+                  );
+                } else {
+                  return CircularProgressIndicator();
+                }
+              },
+            ),
+            //buildVitalItem(label: 'R-R Intervals', value: 5),
 
             // TextButton(
             //   child: Padding(
@@ -161,7 +229,7 @@ class _VitalTrackerState extends State<VitalTracker> {
     );
   }
 
-  Text buildVitalItem({String label, int value}) {
+  Text buildVitalItem({String label, dynamic value}) {
 
     return Text(
       '$label : $value',
