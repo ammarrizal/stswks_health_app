@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prototype_1/services/api.dart';
 import 'package:prototype_1/views/consumed_food_page.dart';
 import 'package:prototype_1/views/cycling_page.dart';
 import 'package:prototype_1/views/running_page.dart';
@@ -13,6 +14,8 @@ class CalorieCounter extends StatefulWidget {
 }
 
 class _CalorieCounterState extends State<CalorieCounter> {
+
+  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,38 +41,59 @@ class _CalorieCounterState extends State<CalorieCounter> {
                 children: [
 
                   SizedBox(height: 20.0),
-                  Text(
-                    'Overall calorie : 2400',
-                    style: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 18.0,
-                    ),
-                  ),
+                  Form(
+                    key: _formKey,
+                    child: Container(
+                      child: Column(
+                        children: [
+                          FutureBuilder(
+                            future: API().getVitalById(2),
+                            builder: (context, snapshot) {
+                              if (snapshot.hasData) {
+                                return Text(
+                                  'Overall calorie : 2400',
+                                  style: TextStyle(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 18.0,
+                                  ),
+                                );
+                              }
+                              else {
+                                return CircularProgressIndicator();
+                              }
+                            },
+                          ),
+                          SizedBox(height: 20.0),
 
-                  SizedBox(height: 20.0),
-
-                  Text(
-                    'Input optimal daily calorie intake',
-                    style: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 18.0,
-                    ),
-                  ),
-                  SizedBox(height: 10.0),
-                  TextFormField(
-                    //controller: sugarLevelController,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Poppins',
-                      //fontSize: 18.0,
-                    ),
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(0.0), // 30
+                          Text(
+                            'Input optimal daily calorie intake',
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontSize: 18.0,
+                            ),
+                          ),
+                          SizedBox(height: 10.0),
+                          TextFormField(
+                            //onSaved: (input) => ,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              //fontSize: 18.0,
+                            ),
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(0.0), // 30
+                              ),
+                              hintText: 'Enter your calorie intake',
+                            ),
+                          )
+                        ],
                       ),
-                      hintText: 'Enter your calorie intake',
                     ),
                   ),
+
+
+
                   SizedBox(height: 15.0),
                   Container(
                     width: 400,
