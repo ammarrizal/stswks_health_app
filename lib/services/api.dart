@@ -115,8 +115,8 @@ class API {
 
       var data = Map<String, dynamic>.from(jsonDecode(response.body));
       print(data);
-      var calorie = VitalModel.fromJson(data);
-      print("vital id is : " + calorie.id.toString());
+      var calorie = CalorieModel.fromJson(data);
+      print("calorie id is : " + calorie.id.toString());
       return calorie;
     }
     catch (e) {
@@ -126,7 +126,7 @@ class API {
 
   Future updateCalorieById(int id, CalorieModel calorie) async {
     try {
-      //print(vital.pulse);
+      print('api calorie update ${calorie.overallCalories}');
       //print("update from api is ${DateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").format(vital.testDate)}");
       // 192.168.1.103:45456
       var url = Uri.http('192.168.1.106:55000', '/api/calorie/$id');
