@@ -105,7 +105,7 @@ class _CalorieCounterState extends State<CalorieCounter> {
                     SizedBox(height: 15.0),
                     Container(
                       width: 400,
-                      child: TextButton(
+                      child: ElevatedButton(
                         onPressed: () {
                           if (_formKey.currentState.validate()) {
                             _formKey.currentState.save();
@@ -182,7 +182,7 @@ class _CalorieCounterState extends State<CalorieCounter> {
 
                     SizedBox(height: 0.0),
 
-                    TextButton(
+                    ElevatedButton(
                       onPressed: (){
                         Navigator.push(context,
                           MaterialPageRoute(builder: (context) => ConsumedFood()),);
@@ -218,7 +218,7 @@ class _CalorieCounterState extends State<CalorieCounter> {
 
                     SizedBox(height: 15.0),
 
-                    TextButton(
+                    ElevatedButton(
                       onPressed: (){
                         Navigator.push(context,
                           MaterialPageRoute(builder: (context) => ThirdPartyAppPage()),);
@@ -290,7 +290,7 @@ class _CalorieCounterState extends State<CalorieCounter> {
 
                     SizedBox(height: 15.0),
 
-                    TextButton(
+                    ElevatedButton(
                       onPressed: (){
                         Navigator.push(context,
                           MaterialPageRoute(builder: (context) => Running()),);
@@ -326,7 +326,7 @@ class _CalorieCounterState extends State<CalorieCounter> {
 
                     SizedBox(height: 15.0),
 
-                    TextButton(
+                    ElevatedButton(
                       onPressed: (){
                         Navigator.push(context,
                           MaterialPageRoute(builder: (context) => Walking()),);
@@ -362,7 +362,7 @@ class _CalorieCounterState extends State<CalorieCounter> {
 
                     SizedBox(height: 15.0),
 
-                    TextButton(
+                    ElevatedButton(
                       onPressed: (){
                         Navigator.push(context,
                           MaterialPageRoute(builder: (context) => Cycling()),);

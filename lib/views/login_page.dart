@@ -63,69 +63,70 @@ class _LoginPageState extends State<LoginPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Image.asset(
-                    'assets/oversight-logo.png',
-                    // height: 300,
-                    width: 300,
-                  ),
-                  Text(
-                    'Hi, There!',
-                    style: TextStyle(
-                      fontFamily: 'Butler',
-                      fontSize: 20.0,
-                    ),
-                  ),
-
-                  Text(
-                    'Please Choose One:',
-                    style: TextStyle(
-                      fontFamily: 'Butler',
-                      fontSize: 20.0,
-                    ),
-                  ),
+                  // Image.asset(
+                  //   'assets/oversight-logo.png',
+                  //   // height: 300,
+                  //   width: 300,
+                  // ),
+                  // Text(
+                  //   'Hi, There!',
+                  //   style: TextStyle(
+                  //     fontFamily: 'Butler',
+                  //     fontSize: 20.0,
+                  //   ),
+                  // ),
+                  //
+                  // Text(
+                  //   'Please Choose One:',
+                  //   style: TextStyle(
+                  //     fontFamily: 'Butler',
+                  //     fontSize: 20.0,
+                  //   ),
+                  // ),
 
                   Text(
                     'Username',
                     style: TextStyle(
-                      fontFamily: 'Butler',
+                      fontFamily: 'Poppins',
                       fontSize: 20.0,
                     ),
                   ),
                   SizedBox(height: 20.0),
                   Container(
-                    width: 300,
-                    child: TextFormField(
-                      controller: usernameController,
-                      textAlign: TextAlign.center,
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(30.0),
-                          ),
-                          hintText: 'Enter your username'
-                      ),
-                    ),
+                      width: 300,
+                      child: TextFormField(
+                        textAlign: TextAlign.center,
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(0.0) // 30.0 previously,
+                            ),
+                            hintText: 'Username'
+                        ),
+                        onSaved: (input) => user.userName = input,
+                      )
                   ),
                   SizedBox(height: 30),
                   Text(
                     'Password',
                     style: TextStyle(
+                      fontFamily: 'Poppins',
                       fontSize: 20.0,
                     ),
                   ),
                   SizedBox(height: 20.0),
                   Container(
-                    width: 300,
-                    child: TextFormField(
-                      controller: passwordController,
-                      textAlign: TextAlign.center,
-                      obscureText: true,
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(30.0),
-                          ),
-                          hintText: 'Enter your password'
-                      ),
-                    ),
+                      width: 300,
+                      child: TextFormField(
+                        textAlign: TextAlign.center,
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(0.0) // 30.0 previously,
+                            ),
+                            hintText: 'Password'
+                        ),
+                        obscureText: true,
+                        onSaved: (input) => user.userName = input,
+                      )
                   ),
                   SizedBox(height: 10),
                   TextButton(
@@ -134,6 +135,7 @@ class _LoginPageState extends State<LoginPage> {
                       'Forgot password?',
                       textAlign: TextAlign.right,
                       style: TextStyle(
+                        fontFamily: 'Poppins',
                         fontSize: 16.0,
                         decoration: TextDecoration.underline,
                       ),
@@ -170,14 +172,19 @@ class _LoginPageState extends State<LoginPage> {
                       },
                       style: ButtonStyle(
                         shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(40.0),
+                          borderRadius: BorderRadius.circular(0.0),
+                          side: BorderSide(
+                            color: Color(0xff96d3ee),
+                            width: 0.0,
+                          ),
                         )),
-                        padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 20.0)),
-                        backgroundColor: MaterialStateProperty.all(Color(0xff1e6f5c)),
+                        padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(30.0, 15.0, 30.0, 15.0)),
+                        backgroundColor: MaterialStateProperty.all(Color(0xff079cd8)),
                       ),
                       child: Text(
                         'Login',
                         style: TextStyle(
+                          fontFamily: 'Poppins',
                           fontSize: 20,
                           color: Colors.white,
                         ),
@@ -185,33 +192,33 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   SizedBox(height: 20),
-                  Container(
-                    width: 300,
-                    child: TextButton(
-                      onPressed: () {
-                        Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => RegisterPage()),);
-                      },
-                      style: ButtonStyle(
-                        shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(40.0),
-                          side: BorderSide(
-                            width: 2.5,
-                            color: Color(0xff1e6f5c),
-                          ),
-                        )),
-                        padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 20.0)),
-                        //backgroundColor: MaterialStateProperty.all(Color(0xff1e6f5c)),
-                      ),
-                      child: Text(
-                        'Register',
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.black87,
-                        ),
-                      ),
-                    ),
-                  ),
+                  // Container(
+                  //   width: 300,
+                  //   child: TextButton(
+                  //     onPressed: () {
+                  //       Navigator.push(context,
+                  //         MaterialPageRoute(builder: (context) => RegisterPage()),);
+                  //     },
+                  //     style: ButtonStyle(
+                  //       shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                  //         borderRadius: BorderRadius.circular(40.0),
+                  //         side: BorderSide(
+                  //           width: 2.5,
+                  //           color: Color(0xff1e6f5c),
+                  //         ),
+                  //       )),
+                  //       padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 20.0)),
+                  //       //backgroundColor: MaterialStateProperty.all(Color(0xff1e6f5c)),
+                  //     ),
+                  //     child: Text(
+                  //       'Register',
+                  //       style: TextStyle(
+                  //         fontSize: 20,
+                  //         color: Colors.black87,
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
                 ],
               ),
             ),
